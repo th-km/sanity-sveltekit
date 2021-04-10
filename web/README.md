@@ -1,32 +1,42 @@
-# Sanity SvelteKit demo
+# create-svelte
 
-## Sanity
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
-1.  `cd studio`
-2.  `npm i`
-3.  `sanity init`
-4.  Choose `reconfigure the studio`
-5.  Select `create new project`, and leave the project output path blank
-6.  Choose the movie project (schema + sample data)
-7.  Add a sampling of sci-fi movies to your dataset
-8.  Run `sanity start`
+## Creating a project
 
-## SvelteKit
+If you're seeing this, you've probably already done this step. Congrats!
 
-1.  `cd web`
-2.  `npm i`
-3.  `npm run dev -- --open`
+```bash
+# create a new project in the current directory
+npm init svelte@next
 
-## Notes
+# create a new project in my-app
+npm init svelte@next my-app
+```
 
-- CORS Origins issue. Add `http://localhost:3000` in your Sanity dashboard > API settings (allow credentials)
-- Requires node 12.5+ (node 14 recommended)
+> Note: the `@next` is temporary
 
-## Issues
+## Developing
 
-- Svelte PortableText error:
-  `<BlockContent> is not a valid SSR component. You may need to review your build config to ensure that dependencies are compiled, rather than imported as pre-compiled modules`
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-## SvelteKit docs
+```bash
+npm run dev
 
-https://kit.svelte.dev/docs
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+Svelte apps are built with _adapters_, which optimise your project for deployment to different environments.
+
+By default, `npm run build` will generate a Node app that you can run with `node build`. To use a different adapter, add it to the `devDependencies` in `package.json` making sure to specify the version as `next` and update your `svelte.config.cjs` to [specify your chosen adapter](https://kit.svelte.dev/docs#configuration-adapter). The following official adapters are available:
+
+- [@sveltejs/adapter-node](https://github.com/sveltejs/kit/tree/master/packages/adapter-node)
+- [@sveltejs/adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static)
+- [@sveltejs/adapter-netlify](https://github.com/sveltejs/kit/tree/master/packages/adapter-netlify)
+- [@sveltejs/adapter-vercel](https://github.com/sveltejs/kit/tree/master/packages/adapter-vercel)
+- ...more soon
+
+[See the adapter documentation for more detail](https://kit.svelte.dev/docs#adapters)
