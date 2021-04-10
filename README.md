@@ -1,1 +1,1 @@
-kit
+# Sanity Svelkit Demo
