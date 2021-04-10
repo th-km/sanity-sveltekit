@@ -17,12 +17,11 @@
 </script>
 
 <script>
-  // import BlockContent from '@movingbrands/svelte-portable-text'
+  import BlockContent from '$lib/portable-text'
   import { urlFor } from '$lib/image-url'
 
   export let movie
-  // export const customSerializers = {}
-
+  export const customSerializers = {}
   $: ({ title, poster, overview } = movie)
 </script>
 
@@ -30,7 +29,8 @@
 <h1>{title}</h1>
 <img src={urlFor(poster).width(600).height(400)} alt={title} />
 
-<!-- <BlockContent blocks={overview} serializers={customSerializers} /> -->
+<BlockContent blocks={overview} serializers={customSerializers} />
+
 <style>
   :global(a) {
     color: black;
