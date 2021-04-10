@@ -1,0 +1,10 @@
+{
+	"useTabs": false,
+	"singleQuote": true,
+	"semi": false,
+	"svelteBracketNewLine": true,
+	"svelteIndentScriptAndStyle": true,
+	"arrowParens": "avoid",
+	"trailingComma": "none",
+	"printWidth": 100
+}
