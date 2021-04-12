@@ -22,11 +22,6 @@
 - CORS Origins issue. Add `http://localhost:3000` in your Sanity dashboard > API settings (allow credentials)
 - Requires node 12.5+ (node 14 recommended)
 
-## Issues
-
-- Svelte PortableText error:
-  `<BlockContent> is not a valid SSR component. You may need to review your build config to ensure that dependencies are compiled, rather than imported as pre-compiled modules`
-
 ## SvelteKit docs
 
 https://kit.svelte.dev/docs
