@@ -1,5 +1,5 @@
 <script context="module">
-  import client from '../lib/client'
+  import client from '$lib/client'
 
   export async function load({ page }) {
     const query = `*[_type == "movie" && slug.current == $slug][0] {
@@ -22,14 +22,19 @@
 
   export let movie
   export const customSerializers = {}
+
   $: ({ title, poster, overview } = movie)
 </script>
 
-<a href="/">&larr; Back to home</a>
-<h1>{title}</h1>
-<img src={urlFor(poster).width(600).height(400)} alt={title} />
+<div>
+  <a href="/">&larr; Back to home</a>
+  <h1>{title}</h1>
+  <img src={urlFor(poster).width(600).height(400)} alt={title} />
 
-<BlockContent blocks={overview} serializers={customSerializers} />
+  <div>
+    <BlockContent blocks={overview} serializers={customSerializers} />
+  </div>
+</div>
 
 <style>
   :global(a) {
@@ -43,8 +48,11 @@
   }
 
   h1 {
-    margin-top: 1rem;
     font-size: 2rem;
     font-weight: 800;
+  }
+
+  div > * + * {
+    margin-top: 1.5rem;
   }
 </style>

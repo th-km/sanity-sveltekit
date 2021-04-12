@@ -4,5 +4,5 @@ import client from './client'
 const builder = imageUrlBuilder(client)
 
 export function urlFor(source) {
-	return builder.image(source)
+  return builder.image(source)
 }
